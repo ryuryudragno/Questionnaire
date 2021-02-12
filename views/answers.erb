@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>アンケートフォーム</title>
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+<body>
+	<a href = "/">トップへ戻る</a>
+	<div class ="row">
+		<div class = "col-lg-8 col-lg-offset-2">
+			<div class = "panel-heading">
+				<span class = "glyphicon glyphicon-triangle-right"></span> 
+				回答一覧
+			</div>
+			<div class = "panel-body">
+				<table class = "table">
+					<tr>
+						<th>名前</th>
+						<th>年齢</th>
+						<th>学年</th>
+						<th>性別</th>
+						<th>日付</th>
+						<th>メールアドレス</th>
+						<th>パスワード</th>
+						<th>問い合わせ内容</th>
+					</tr>
+					<% @answers.each do |answer| %>
+					<tr>
+						<td><%= answer.name %></td>
+						<td><%= answer.age %></td>
+						<td><%= answer.grade %></td>
+						<td><%= answer.gender %></td>
+						<td><%= answer.date %></td>
+						<td><%= answer.email %></td>
+						<td><%= answer.password %></td>
+						<td><%= answer.content %></td>
+					</tr>
+					<% end %>		
+			        	
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
